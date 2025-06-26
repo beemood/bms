@@ -51,7 +51,7 @@
       "options": {
         "targetName": "test"
       },
-      "exclude": ["apps/bms-e2e/**/*"]
+      "exclude": ["apis/inventory-e2e/**/*"]
     }
   ],
   "targetDefaults": {

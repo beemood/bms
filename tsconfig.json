@@ -4,10 +4,10 @@
   "files": [],
   "references": [
     {
-      "path": "./apps/bms-e2e"
+      "path": "./apis/inventory-e2e"
     },
     {
-      "path": "./apps/bms"
+      "path": "./apis/inventory"
     }
   ]
 }

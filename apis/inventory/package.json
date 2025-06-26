@@ -1,5 +1,5 @@
 {
-  "name": "@bms/bms",
+  "name": "@bms/inventory",
   "version": "0.0.1",
   "private": true,
   "nx": {
@@ -28,15 +28,15 @@
           "build"
         ],
         "options": {
-          "buildTarget": "@bms/bms:build",
+          "buildTarget": "@bms/inventory:build",
           "runBuildTargetDependencies": false
         },
         "configurations": {
           "development": {
-            "buildTarget": "@bms/bms:build:development"
+            "buildTarget": "@bms/inventory:build:development"
           },
           "production": {
-            "buildTarget": "@bms/bms:build:production"
+            "buildTarget": "@bms/inventory:build:production"
           }
         }
       },

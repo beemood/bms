@@ -1,10 +1,10 @@
 {
-  "name": "@bms/bms-e2e",
+  "name": "@bms/inventory-e2e",
   "version": "0.0.1",
   "private": true,
   "nx": {
     "implicitDependencies": [
-      "@bms/bms"
+      "@bms/inventory"
     ],
     "targets": {
       "e2e": {
@@ -13,12 +13,12 @@
           "{projectRoot}/test-output/jest/coverage"
         ],
         "options": {
-          "jestConfig": "apps/bms-e2e/jest.config.ts",
+          "jestConfig": "apis/inventory-e2e/jest.config.ts",
           "passWithNoTests": true
         },
         "dependsOn": [
-          "@bms/bms:build",
-          "@bms/bms:serve"
+          "@bms/inventory:build",
+          "@bms/inventory:serve"
         ]
       }
     }
