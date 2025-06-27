@@ -8,9 +8,9 @@ import {
   Put,
 } from '@beemood/nest';
 import { InjectRepository } from '@beemood/prisma';
-import { Prisma } from '../../generated/prisma';
 import { CreateCategoryDto } from './dto/create-category.dto';
 import { UpdateCategoryDto } from './dto/update-category.dto';
+import { Prisma } from '@bms/prisma-inventory';
 
 @Controller({ path: 'category' })
 export class CategoryController {

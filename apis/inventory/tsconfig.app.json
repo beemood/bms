@@ -1,10 +1,10 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "outDir": "dist",
+    "outDir": "{workspaceRoot}/dist/inventory/src",
     "types": ["node"],
     "rootDir": "src",
-    "tsBuildInfoFile": "dist/tsconfig.app.tsbuildinfo",
+    "tsBuildInfoFile": "{workspaceRoot}/dist/inventory/src/tsconfig.app.tsbuildinfo",
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "target": "es2021"
@@ -14,7 +14,6 @@
     "out-tsc",
     "dist",
     "jest.config.ts",
-    "src/generated/**/*.*",
     "src/**/*.spec.ts",
     "src/**/*.test.ts",
     "eslint.config.js",
