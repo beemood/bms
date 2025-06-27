@@ -8,6 +8,12 @@
     },
     {
       "path": "./apis/inventory"
+    },
+    {
+      "path": "./apis/auth-e2e"
+    },
+    {
+      "path": "./apis/auth"
     }
   ]
 }

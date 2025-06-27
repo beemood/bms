@@ -1,0 +1,21 @@
+{
+  "name": "@bms/auth",
+  "description": "- [ ] Add project description",
+  "version": "0.0.0",
+  "author": {
+    "name": "Robert Brightline",
+    "email": "robert.brightline@gmail.com",
+    "url": "https://beemood.github.io"
+  },
+  "funding": [
+    "https://cash.app/$puqlib"
+  ],
+  "icon": "https://raw.githubusercontent.com/beemood/bms/refs/heads/main/apis/auth/favicon.png",
+  "homepage": "https://beemood.github.io/bms/apis/auth",
+  "files": [
+    "assets"
+  ],
+  "dependencies": {
+    "tslib": "^2.8.1"
+  }
+}
