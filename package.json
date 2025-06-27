@@ -3,6 +3,16 @@
   "version": "0.0.0",
   "license": "MIT",
   "private": true,
+  "author": {
+    "name": "Robert Brightline",
+    "email": "robert.brightline@gmail.com",
+    "url": "https://beemood.github.io"
+  },
+  "funding": [
+    "https://cash.app/$puqlib"
+  ],
+  "icon": "https://raw.githubusercontent.com/beemood/bms/refs/heads/main/favicon.png",
+  "homepage": "https://beemood.github.io/bms",
   "dependencies": {
     "@beemood/cli": "^1.0.2",
     "@beemood/nest": "^1.0.0",
