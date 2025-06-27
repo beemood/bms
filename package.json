@@ -14,7 +14,6 @@
   "icon": "https://raw.githubusercontent.com/beemood/bms/refs/heads/main/favicon.png",
   "homepage": "https://beemood.github.io/bms",
   "dependencies": {
-    "@beemood/cli": "^1.0.2",
     "@beemood/nest": "^1.0.0",
     "@beemood/prisma": "^1.0.0",
     "@beemood/property": "^1.0.0",
@@ -35,6 +34,7 @@
     "tslib": "^2.8.1"
   },
   "devDependencies": {
+    "@beemood/cli": "^1.0.4",
     "@beemood/interface": "^1.0.0",
     "@eslint/js": "^9.8.0",
     "@nestjs/schematics": "^11.0.0",

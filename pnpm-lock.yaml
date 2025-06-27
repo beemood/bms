@@ -8,9 +8,6 @@ importers:
 
   .:
     dependencies:
-      '@beemood/cli':
-        specifier: ^1.0.2
-        version: 1.0.2(nx@21.2.1(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.17))(@swc/types@0.1.23)(typescript@5.8.3))(@swc/core@1.5.29(@swc/helpers@0.5.17)))
       '@beemood/nest':
         specifier: ^1.0.0
         version: 1.0.0(@nestjs/common@11.1.3(class-transformer@0.5.1)(class-validator@0.14.2)(reflect-metadata@0.1.14)(rxjs@7.8.2))(@nestjs/swagger@11.2.0(@nestjs/common@11.1.3(class-transformer@0.5.1)(class-validator@0.14.2)(reflect-metadata@0.1.14)(rxjs@7.8.2))(@nestjs/core@11.1.3)(class-transformer@0.5.1)(class-validator@0.14.2)(reflect-metadata@0.1.14))
@@ -66,6 +63,9 @@ importers:
         specifier: ^2.8.1
         version: 2.8.1
     devDependencies:
+      '@beemood/cli':
+        specifier: ^1.0.4
+        version: 1.0.4(nx@21.2.1(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.17))(@swc/types@0.1.23)(typescript@5.8.3))(@swc/core@1.5.29(@swc/helpers@0.5.17)))
       '@beemood/interface':
         specifier: ^1.0.0
         version: 1.0.0
@@ -167,10 +167,6 @@ importers:
         version: 2.8.1
 
   apis/inventory-e2e: {}
-
-  apps/bms: {}
-
-  apps/bms-e2e: {}
 
 packages:
 
@@ -797,8 +793,8 @@ packages:
   '@bcoe/v8-coverage@0.2.3':
     resolution: {integrity: sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==}
 
-  '@beemood/cli@1.0.2':
-    resolution: {integrity: sha512-cnHQX4xhf6Evb+jet9atFs2RrGwF/01bQ9xEbAl/LyAgdir0G8uw2T/h671gNFE0VjSz8WidrlpZbA1PQNxN/g==}
+  '@beemood/cli@1.0.4':
+    resolution: {integrity: sha512-k6BDTT9O2JccmXsVPzX2wbOy0WP+Jq7r6ntyQVkdU9qz6smvU+5XNqKxv1dNwuatyR88yaYYgUBMWUacf400Bw==}
     hasBin: true
 
   '@beemood/interface@1.0.0':
@@ -6064,7 +6060,7 @@ snapshots:
 
   '@bcoe/v8-coverage@0.2.3': {}
 
-  '@beemood/cli@1.0.2(nx@21.2.1(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.17))(@swc/types@0.1.23)(typescript@5.8.3))(@swc/core@1.5.29(@swc/helpers@0.5.17)))':
+  '@beemood/cli@1.0.4(nx@21.2.1(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.17))(@swc/types@0.1.23)(typescript@5.8.3))(@swc/core@1.5.29(@swc/helpers@0.5.17)))':
     dependencies:
       '@nx/devkit': 21.2.1(nx@21.2.1(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.17))(@swc/types@0.1.23)(typescript@5.8.3))(@swc/core@1.5.29(@swc/helpers@0.5.17)))
       commander: 14.0.0
