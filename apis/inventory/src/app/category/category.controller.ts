@@ -1,6 +1,16 @@
-import { Body, Controller, Get, ParamId, Post, Put } from '@beemood/nest';
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  ParamId,
+  Post,
+  Put,
+} from '@beemood/nest';
 import { InjectRepository } from '@beemood/prisma';
 import { Prisma } from '../../generated/prisma';
+import { CreateCategoryDto } from './dto/create-category.dto';
+import { UpdateCategoryDto } from './dto/update-category.dto';
 
 @Controller({ path: 'category' })
 export class CategoryController {
@@ -20,12 +30,17 @@ export class CategoryController {
   }
 
   @Post({})
-  save(@Body() data: any) {
+  save(@Body() data: CreateCategoryDto) {
     return this.repo.create({ data });
   }
 
   @Put({ path: ':id' })
-  update(@ParamId() id: number, @Body() data: any) {
+  update(@ParamId() id: number, @Body() data: UpdateCategoryDto) {
     return this.repo.update({ where: { id }, data });
+  }
+
+  @Delete({ path: ':id' })
+  delete(@ParamId() id: number) {
+    return this.repo.delete({ where: { id } });
   }
 }
