@@ -1,8 +1,20 @@
+/**
+ * Get environement variable
+ * @param {string} key
+ */
+function env(key) {
+  const value = process.env[key];
+  if (value == undefined) {
+    throw new Error(`${key} env is required!`);
+  }
+  return value;
+}
+
 module.exports = {
   apps: [
     {
       name: 'inventory-production',
-      script: '../main.js',
+      script: '../dist/apis/inventory/main.js',
       env: {
         MODE: 'PRODUCTION',
         PORT: 5003,
@@ -12,7 +24,7 @@ module.exports = {
     },
     {
       name: 'inventory-dev',
-      script: '../main.js',
+      script: '../dist/apis/inventory/main.js',
       env: {
         MODE: 'DEV',
         PORT: 3003,

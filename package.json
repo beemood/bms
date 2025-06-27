@@ -2,9 +2,9 @@
   "name": "@bms/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
   "private": true,
   "dependencies": {
+    "@beemood/cli": "^1.0.2",
     "@beemood/nest": "^1.0.0",
     "@beemood/prisma": "^1.0.0",
     "@beemood/property": "^1.0.0",

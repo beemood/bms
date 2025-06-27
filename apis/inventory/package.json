@@ -11,14 +11,9 @@
     "access": "public",
     "tag": "latest"
   },
-  "bin": {
-    "start-inventory-api": "./bin/start.sh",
-    "stop-inventory-api": "./bin/stop.sh"
-  },
   "private": true,
   "files": [
-    "assets",
-    "bin"
+    "assets"
   ],
   "dependencies": {
     "tslib": "^2.8.1"
