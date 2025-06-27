@@ -34,7 +34,7 @@
     "tslib": "^2.8.1"
   },
   "devDependencies": {
-    "@beemood/cli": "^1.0.4",
+    "@beemood/cli": "^1.0.5",
     "@beemood/interface": "^1.0.0",
     "@eslint/js": "^9.8.0",
     "@nestjs/schematics": "^11.0.0",
