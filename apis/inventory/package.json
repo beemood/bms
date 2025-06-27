@@ -1,50 +1,26 @@
 {
   "name": "@bms/inventory",
+  "description": "Inventory api",
   "version": "0.0.1",
+  "author": {
+    "email": "robert.brightline@gmail.com",
+    "name": "Robert Brightline",
+    "url": "https://beemood.github.io"
+  },
+  "publishConfig": {
+    "access": "public",
+    "tag": "latest"
+  },
+  "bin": {
+    "start-inventory-api": "./bin/start.sh",
+    "stop-inventory-api": "./bin/stop.sh"
+  },
   "private": true,
-  "nx": {
-    "targets": {
-      "build": {
-        "executor": "nx:run-commands",
-        "options": {
-          "command": "webpack-cli build",
-          "args": [
-            "node-env=production"
-          ]
-        },
-        "configurations": {
-          "development": {
-            "args": [
-              "node-env=development"
-            ]
-          }
-        }
-      },
-      "serve": {
-        "continuous": true,
-        "executor": "@nx/js:node",
-        "defaultConfiguration": "development",
-        "dependsOn": [
-          "build"
-        ],
-        "options": {
-          "buildTarget": "@bms/inventory:build",
-          "runBuildTargetDependencies": false
-        },
-        "configurations": {
-          "development": {
-            "buildTarget": "@bms/inventory:build:development"
-          },
-          "production": {
-            "buildTarget": "@bms/inventory:build:production"
-          }
-        }
-      },
-      "test": {
-        "options": {
-          "passWithNoTests": true
-        }
-      }
-    }
+  "files": [
+    "assets",
+    "bin"
+  ],
+  "dependencies": {
+    "tslib": "^2.8.1"
   }
 }

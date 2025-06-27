@@ -3,29 +3,46 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app/app.module';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { ConfigService } from '@nestjs/config';
+import helmet from 'helmet';
+import { getValidationPipe } from '@beemood/nest';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
-  const GLOBAL_REFIX = 'api';
+  const app = await NestFactory.create(AppModule, {
+    logger: process.env.NODE_ENV === 'production' ? ['error'] : ['log'],
+    autoFlushLogs: true,
+  });
+  const cfg = app.get(ConfigService);
 
-  app.setGlobalPrefix(GLOBAL_REFIX);
+  const NAME = 'Inventory';
+  const PREFIX = 'api';
+  const PORT = cfg.getOrThrow('PORT');
+  const MODE = cfg.getOrThrow('MODE');
 
-  const config = app.get(ConfigService);
+  appConfig: {
+    app.setGlobalPrefix(PREFIX);
+    app.enableCors({ origins: '*' });
+    app.use(helmet());
+    app.useGlobalPipes(getValidationPipe());
+  }
 
-  const PORT = config.getOrThrow('PORT');
+  swaggerConfig: {
+    const swaggerConfig = new DocumentBuilder()
+      .setTitle(`${NAME} (${MODE})`)
+      .addBearerAuth()
+      .build();
 
-  const swaggerConfig = new DocumentBuilder()
-    .setTitle('Inventory')
-    .addBearerAuth()
-    .build();
-  const swaggerDoc = SwaggerModule.createDocument(app, swaggerConfig);
-  SwaggerModule.setup('api', app, swaggerDoc);
+    const swaggerDoc = SwaggerModule.createDocument(app, swaggerConfig);
+    SwaggerModule.setup(PREFIX, app, swaggerDoc);
+  }
 
-  await app.listen(PORT);
+  startApp: {
+    await app.listen(PORT);
 
-  Logger.log(
-    `🚀 Application is running on: http://localhost:${PORT}/${GLOBAL_REFIX}`
-  );
+    Logger.log(
+      `Server is up and running at http://${await app.getUrl()}:${PORT}/${PREFIX}`,
+      `${NAME} (${MODE})`
+    );
+  }
 }
 
 bootstrap();
