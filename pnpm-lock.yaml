@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@beemood/crypto':
+        specifier: ^1.0.0
+        version: 1.0.0
       '@beemood/nest':
         specifier: ^1.0.0
         version: 1.0.0(@nestjs/common@11.1.3(class-transformer@0.5.1)(class-validator@0.14.2)(reflect-metadata@0.1.14)(rxjs@7.8.2))(@nestjs/swagger@11.2.0(@nestjs/common@11.1.3(class-transformer@0.5.1)(class-validator@0.14.2)(reflect-metadata@0.1.14)(rxjs@7.8.2))(@nestjs/core@11.1.3)(class-transformer@0.5.1)(class-validator@0.14.2)(reflect-metadata@0.1.14))
@@ -64,8 +67,8 @@ importers:
         version: 2.8.1
     devDependencies:
       '@beemood/cli':
-        specifier: ^1.0.5
-        version: 1.0.5(nx@21.2.1(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.17))(@swc/types@0.1.23)(typescript@5.8.3))(@swc/core@1.5.29(@swc/helpers@0.5.17)))
+        specifier: ^1.0.9
+        version: 1.0.9(nx@21.2.1(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.17))(@swc/types@0.1.23)(typescript@5.8.3))(@swc/core@1.5.29(@swc/helpers@0.5.17)))
       '@beemood/interface':
         specifier: ^1.0.0
         version: 1.0.0
@@ -159,6 +162,14 @@ importers:
       webpack-cli:
         specifier: ^5.1.4
         version: 5.1.4(webpack@5.99.9)
+
+  apis/auth:
+    dependencies:
+      tslib:
+        specifier: ^2.8.1
+        version: 2.8.1
+
+  apis/auth-e2e: {}
 
   apis/inventory:
     dependencies:
@@ -793,9 +804,12 @@ packages:
   '@bcoe/v8-coverage@0.2.3':
     resolution: {integrity: sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==}
 
-  '@beemood/cli@1.0.5':
-    resolution: {integrity: sha512-CHLzvtPrmGnxUMwLtcSBfte05tDncqb321kkweIh9s4SsRyc3XS5CuXPi2BWwaK71cyzmkPQavj19FM3MBVIMQ==}
+  '@beemood/cli@1.0.9':
+    resolution: {integrity: sha512-if2ZUFN97OGmVUudvY3iIg/AM71Jok2pXCEoDYmUFkFzpeYRXj+H1BnH59wj0WYGSyN8JP72hCm941DxKlleSQ==}
     hasBin: true
+
+  '@beemood/crypto@1.0.0':
+    resolution: {integrity: sha512-DhbcWfQo1kvcOCzLSDCeFDk2ERw9c560k5JuhiXgwtVvjU0se7e5pV83noZrYLjHmYOWMy9WAisHeZwhhmLKUg==}
 
   '@beemood/interface@1.0.0':
     resolution: {integrity: sha512-01X5rQVQCOnDcLnMfYfahXVASe6pEl3NSFGNeNs3zYP23K4bpnbe8Pymb1KhC2bOwJzKeaXgabkgWk7Ui3vPZQ==}
@@ -6060,13 +6074,15 @@ snapshots:
 
   '@bcoe/v8-coverage@0.2.3': {}
 
-  '@beemood/cli@1.0.5(nx@21.2.1(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.17))(@swc/types@0.1.23)(typescript@5.8.3))(@swc/core@1.5.29(@swc/helpers@0.5.17)))':
+  '@beemood/cli@1.0.9(nx@21.2.1(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.17))(@swc/types@0.1.23)(typescript@5.8.3))(@swc/core@1.5.29(@swc/helpers@0.5.17)))':
     dependencies:
       '@nx/devkit': 21.2.1(nx@21.2.1(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.17))(@swc/types@0.1.23)(typescript@5.8.3))(@swc/core@1.5.29(@swc/helpers@0.5.17)))
       commander: 14.0.0
       tslib: 2.8.1
     transitivePeerDependencies:
       - nx
+
+  '@beemood/crypto@1.0.0': {}
 
   '@beemood/interface@1.0.0': {}
 

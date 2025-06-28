@@ -10,7 +10,101 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model User {
+  id Int @id @default(autoincrement())
+
+  createdAt DateTime  @default(now())
+  upatedAt  DateTime  @updatedAt
+  deletedAt DateTime?
+
+  username     String @unique
+  password     String
+  passwordSalt String
+
+  Session Session[]
+}
+
+model App {
+  id Int @id @default(autoincrement())
+
+  name String @unique
+}
+
+model Permisison {
+  id Int @id @default(autoincrement())
+
+  app       String
+  resource  String
+  operation String
+
+  RolePermission        RolePermission[]
+  AccessTokenPermission AccessTokenPermission[]
+
+  @@unique([app, resource, operation])
+}
+
+model Role {
+  id Int @id @default(autoincrement())
+
+  name String @unique
+
+  RolePermission RolePermission[]
+}
+
+model RolePermission {
+  role   Role @relation(fields: [roleId], references: [id])
+  roleId Int
+
+  permission   Permisison @relation(fields: [permisisonId], references: [id])
+  permisisonId Int
+
+  @@unique([roleId, permisisonId])
+}
+
+model AccessToken {
+  id Int @id @default(autoincrement())
+
+  name  String
+  token String
+
+  AccessTokenPermission AccessTokenPermission[]
+}
+
+model AccessTokenPermission {
+  accessToken   AccessToken @relation(fields: [accessTokenId], references: [id])
+  accessTokenId Int
+
+  permission   Permisison @relation(fields: [permisisonId], references: [id])
+  permisisonId Int
+
+  @@unique([accessTokenId, permisisonId])
+}
+
+model Session {
+  id Int @id @default(autoincrement())
+
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
+
+  expirationDate DateTime
+
+  sessionId String @default(uuid())
+  deviceId  String @default(uuid())
+
+  deviceType  String?
+  sessionType String
+
+  user   User @relation(fields: [userId], references: [id])
+  userId Int
+}
+
 model Category {
+  id   Int    @id @default(autoincrement())
+  name String @unique
+}
+
+model Department {
   id   Int    @id @default(autoincrement())
   name String @unique
 }
